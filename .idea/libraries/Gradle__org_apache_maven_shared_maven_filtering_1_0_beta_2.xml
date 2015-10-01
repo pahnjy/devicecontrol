@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.maven.shared:maven-filtering:1.0-beta-2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.shared/maven-filtering/1.0-beta-2/3eafeaced4cbc35e2a7bdb0c8ec4a82d881ab1d6/maven-filtering-1.0-beta-2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.shared/maven-filtering/1.0-beta-2/a849e695cc3f4a94035a00f0bf053bec9b805274/maven-filtering-1.0-beta-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

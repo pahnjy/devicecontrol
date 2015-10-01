@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.maven.plugins:maven-war-plugin:2.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.plugins/maven-war-plugin/2.3/6270960143fc581930602b6c629bcbf604020096/maven-war-plugin-2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.plugins/maven-war-plugin/2.3/e9ee65fe3deee0af528a25ec3c28b66e98839f97/maven-war-plugin-2.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
