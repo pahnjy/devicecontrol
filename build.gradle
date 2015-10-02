@@ -5,22 +5,22 @@ apply plugin: 'war'
 group 'com.pineone'
 version = '1.0.0-BUILD-SNAPSHOT'
 
-compileJava.options.encoding = 'UTF-8'  // ÁöÁ¤ÇÏÁö ¾ÊÀ¸¸é OS ±âº» ÀÎÄÚµùÀ¸·Î °£ÁÖ
-sourceCompatibility = 1.7  // ºôµå½Ã ÇØ´ç ¹öÀüÀ¸·Î ÀÚ¹Ù ¹®¹ý °Ë»ç
+compileJava.options.encoding = 'UTF-8'  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ OS ï¿½âº» ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+sourceCompatibility = 1.7  // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
 version = '1.0'
 
 eclipse {
     wtp {
         facet {
-            facet name: 'jst.web', version: '3.0' // Servlet Spec Version ÁöÁ¤, ¹Ì ÁöÁ¤½Ã 2.4
-            facet name: 'jst.java', version: '1.7' // Java Version ÁöÁ¤
+            facet name: 'jst.web', version: '3.0' // Servlet Spec Version ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2.4
+            facet name: 'jst.java', version: '1.7' // Java Version ï¿½ï¿½ï¿½ï¿½
         }
     }
 }
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'ICBMS-SDA',
+        attributes 'Implementation-Title': 'ICBMS-SO',
                 'Implementation-Version': version
     }
 }

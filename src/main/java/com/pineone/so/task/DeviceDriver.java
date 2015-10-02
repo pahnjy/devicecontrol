@@ -18,7 +18,7 @@ public class DeviceDriver {
      */
     public String messageDataMapping(String device, String operator){
 
-        return "templateOn";
+        return "homeiot.herit.net/csebase/container001/ci00/on";
     }
 
 }

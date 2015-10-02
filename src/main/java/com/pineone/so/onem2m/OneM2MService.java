@@ -1,5 +1,6 @@
 package com.pineone.so.onem2m;
 
+import com.pineone.so.domain.DeviceControlMessage;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,11 +12,18 @@ public class OneM2MService {
     /**
      * create oneM2MMessage
      * @param physicaloperator
-     * @return
+     * @return SI연동 data로 변경.
      */
-    public String oneM2MCreateMessage(String physicaloperator){
+    public DeviceControlMessage oneM2MCreateMessage(String physicaloperator){
 
-        return "http://localhost:9901/herit-in/herit-cse/ae-gaslock1004";
+        DeviceControlMessage deviceControlMessage =  new DeviceControlMessage();
+
+        deviceControlMessage.set_uri("casebase/SAE_0021");
+        deviceControlMessage.set_command("switch_ctl");
+        deviceControlMessage.setCnf("text/plain:0");
+        deviceControlMessage.setCon(physicaloperator);
+
+        return deviceControlMessage;
 
     }
 

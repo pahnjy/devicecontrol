@@ -1,5 +1,6 @@
 package com.pineone.so.task;
 
+import com.pineone.so.domain.DeviceControlMessage;
 import com.pineone.so.domain.VirtualDeviceControlMessage;
 import com.pineone.so.onem2m.OneM2MService;
 import com.pineone.so.service.ClientService;
@@ -28,12 +29,14 @@ public class DeviceControl {
     @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
     public HttpResponse controlMessage(@RequestBody VirtualDeviceControlMessage message){
-        String physicalOperator = deviceDriver.messageDataMapping(message.getDevice(),message.getOperator());
-        String oneM2MMessage = oneM2MService.oneM2MCreateMessage(physicalOperator);
+
+        String physicalOperator = deviceDriver.messageDataMapping(message.getDevice(), message.getOperator());
+        DeviceControlMessage oneM2MMessage = oneM2MService.oneM2MCreateMessage(physicalOperator);
+        System.out.println(oneM2MMessage.toString());
         HttpResponse response = clientService.requestPostData(ClientService.SIDEVICECONTROL,oneM2MMessage);
+
 
         return response;
     }
-
 
 }
