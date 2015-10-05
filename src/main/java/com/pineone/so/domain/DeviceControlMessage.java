@@ -5,16 +5,20 @@ package com.pineone.so.domain;
  */
 public class DeviceControlMessage {
 
-    String _uri;            // CSE relative uri
-    String _command;       // Control the command name
-    String cnf;             // content-type and encoding
-    String con;             // data/content
+    String _uri;                  // CSE relative uri
+    String _notificationUri;    // Control result noti url
+    String _commandId;           // Control the Identified id
+    String _command;             // Control the command name
+    String cnf;                   // content-type and encoding
+    String con;                   // data/content
 
     public DeviceControlMessage() {
     }
 
-    public DeviceControlMessage(String _uri, String _command, String cnf, String con) {
+    public DeviceControlMessage(String _uri, String _notificationUri, String _commandId, String _command, String cnf, String con) {
         this._uri = _uri;
+        this._notificationUri = _notificationUri;
+        this._commandId = _commandId;
         this._command = _command;
         this.cnf = cnf;
         this.con = con;
@@ -26,6 +30,22 @@ public class DeviceControlMessage {
 
     public void set_uri(String _uri) {
         this._uri = _uri;
+    }
+
+    public String get_notificationUri() {
+        return _notificationUri;
+    }
+
+    public void set_notificationUri(String _notificationUri) {
+        this._notificationUri = _notificationUri;
+    }
+
+    public String get_commandId() {
+        return _commandId;
+    }
+
+    public void set_commandId(String _commandId) {
+        this._commandId = _commandId;
     }
 
     public String get_command() {
@@ -51,5 +71,4 @@ public class DeviceControlMessage {
     public void setCon(String con) {
         this.con = con;
     }
-
 }

@@ -1,4 +1,4 @@
-package com.pineone.so.task;
+package com.pineone.so.controller;
 
 import org.springframework.stereotype.Service;
 

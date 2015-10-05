@@ -1,8 +1,8 @@
-package com.pineone.so.task;
+package com.pineone.so.controller;
 
 import com.pineone.so.domain.DeviceControlMessage;
 import com.pineone.so.domain.VirtualDeviceControlMessage;
-import com.pineone.so.onem2m.OneM2MService;
+import com.pineone.so.onem2m.service.OneM2MService;
 import com.pineone.so.service.ClientService;
 import org.apache.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,15 +28,15 @@ public class DeviceControl {
     @RequestMapping(value = "/so/controlmessage", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
-    public HttpResponse controlMessage(@RequestBody VirtualDeviceControlMessage message){
+    public void controlMessage(@RequestBody VirtualDeviceControlMessage message){
 
         String physicalOperator = deviceDriver.messageDataMapping(message.getDevice(), message.getOperator());
         DeviceControlMessage oneM2MMessage = oneM2MService.oneM2MCreateMessage(physicalOperator);
         System.out.println(oneM2MMessage.toString());
         HttpResponse response = clientService.requestPostData(ClientService.SIDEVICECONTROL,oneM2MMessage);
 
+        // response 처리 방법?
 
-        return response;
     }
 
 }
