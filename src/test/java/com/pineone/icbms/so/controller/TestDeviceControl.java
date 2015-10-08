@@ -1,4 +1,4 @@
-package com.pineone.icbms.so.task;
+package com.pineone.icbms.so.controller;
 
 import com.pineone.icbms.so.config.WebAppContext;
 import com.pineone.icbms.so.domain.VirtualDeviceControlMessage;

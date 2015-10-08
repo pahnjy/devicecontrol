@@ -26,6 +26,8 @@ public class ReceiveControl
 		// ResponseMessage responseMessage = DB.update();
 		// .....
 
+
+
 		ResponseMessage responseMessage = new ResponseMessage();
 
 		// response 데이터 처리 service가 필요 할듯.

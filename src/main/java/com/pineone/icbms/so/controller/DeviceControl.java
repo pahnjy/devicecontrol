@@ -1,5 +1,6 @@
 package com.pineone.icbms.so.controller;
 
+import com.pineone.icbms.so.domain.ResponseMessage;
 import com.pineone.icbms.so.domain.VirtualDeviceControlMessage;
 import com.pineone.icbms.so.domain.DeviceControlMessage;
 import com.pineone.icbms.so.service.DataService;
@@ -31,21 +32,20 @@ public class DeviceControl
 	@RequestMapping(value = "/so/controlmessage", method = RequestMethod.POST)
 	@ResponseStatus(value = HttpStatus.OK)
 	@ResponseBody
-	public void controlMessage(@RequestBody VirtualDeviceControlMessage message)
+	public void controlMessage(
+			@RequestBody VirtualDeviceControlMessage message)
 	{
 
 		String physicalOperator = deviceDriver
 				.messageDataMapping(message.getDevice(), message.getOperator());
 		DeviceControlMessage oneM2MMessage = oneM2MService
 				.oneM2MCreateMessage(physicalOperator);
-		System.out.println(oneM2MMessage.toString());
-		System.out.println("start");
-		// json으로 파싱 처리 하기.
+
 		HttpResponse response = clientService.requestPostData(
 				ClientService.SIDEVICECONTROL,
 				DataService.dataParsing(oneM2MMessage));
-
-		// response 처리 방법?
+        ResponseMessage responseMessage = DataService.responseDataParsing(response);
+        // responseMessage 결과값 확인 후 DB에 저장.
 
 	}
 

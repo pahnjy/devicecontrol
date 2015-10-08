@@ -9,7 +9,10 @@ public class ResultMessage
 	String	_resultCode;
 	String	_result;
 
-	public ResultMessage(String _resultCode, String _result)
+    public ResultMessage() {
+    }
+
+    public ResultMessage(String _resultCode, String _result)
 	{
 		this._resultCode = _resultCode;
 		this._result = _result;
