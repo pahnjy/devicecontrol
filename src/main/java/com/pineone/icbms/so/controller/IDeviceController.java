@@ -37,7 +37,7 @@ public class IDeviceController implements DeviceController
 	public void controlMessage(@RequestBody VirtualDeviceControlMessage message)
 	{
 		String physicalOperator = deviceDriver
-				.messageDataMapping(message.getDevice(), message.getOperator());
+				.messageDataMapping(message.getDevicename(), message.getOperator());
 		DeviceControlMessage oneM2MMessage = oneM2MService
 				.oneM2MCreateMessage(physicalOperator);
 

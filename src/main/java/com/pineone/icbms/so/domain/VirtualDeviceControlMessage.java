@@ -6,19 +6,21 @@ package com.pineone.icbms.so.domain;
 public class VirtualDeviceControlMessage
 {
 	String	id;
-	String	device;
+	String	devicename;
 	String	operator;
+	String	value;
 
 	public VirtualDeviceControlMessage()
 	{
 	}
 
-	public VirtualDeviceControlMessage(String id, String device,
-			String operator)
+	public VirtualDeviceControlMessage(String id, String devicename,
+			String operator, String value)
 	{
 		this.id = id;
-		this.device = device;
+		this.devicename = devicename;
 		this.operator = operator;
+		this.value = value;
 	}
 
 	public String getId()
@@ -31,14 +33,14 @@ public class VirtualDeviceControlMessage
 		this.id = id;
 	}
 
-	public String getDevice()
+	public String getDevicename()
 	{
-		return device;
+		return devicename;
 	}
 
-	public void setDevice(String device)
+	public void setDevicename(String devicename)
 	{
-		this.device = device;
+		this.devicename = devicename;
 	}
 
 	public String getOperator()
@@ -49,5 +51,15 @@ public class VirtualDeviceControlMessage
 	public void setOperator(String operator)
 	{
 		this.operator = operator;
+	}
+
+	public String getValue()
+	{
+		return value;
+	}
+
+	public void setValue(String value)
+	{
+		this.value = value;
 	}
 }
