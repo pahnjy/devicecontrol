@@ -5,8 +5,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by use on 2015-10-01.
  */
-@Service
-public class DeviceDriver
+public interface DeviceDriver
 {
 
 	/**
@@ -22,11 +21,6 @@ public class DeviceDriver
 	 *            opertor in VirtualDeviceControlMessage
 	 * @return physical operator
 	 */
-	public String messageDataMapping(String device, String operator)
-	{
-		// device와 operator를 가지고 physical operator를 만든다.
-
-		return "homeiot.herit.net/csebase/container001/ci00/on";
-	}
+	String messageDataMapping(String device, String operator);
 
 }

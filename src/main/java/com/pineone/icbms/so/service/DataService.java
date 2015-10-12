@@ -21,9 +21,9 @@ import java.io.IOException;
 public class DataService
 {
 
-    public static final String RESPONSE_CODE = "code";
-    public static final String RESPONSE_MESSAGE = "message";
-    public static final String RESPONSE_CONTENT = "content";
+	public static final String	RESPONSE_CODE		= "code";
+	public static final String	RESPONSE_MESSAGE	= "message";
+	public static final String	RESPONSE_CONTENT	= "content";
 
 	public static String dataParsing(Object o)
 	{
@@ -44,34 +44,40 @@ public class DataService
 		return data;
 	}
 
-    public static ResponseMessage responseDataParsing(HttpResponse response){
+	public static ResponseMessage responseDataParsing(HttpResponse response)
+	{
 
-        HttpEntity entity = response.getEntity();
-        String responseString = null;
-        try {
-            responseString = EntityUtils.toString(entity, "UTF-8");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(responseString);
+		HttpEntity entity = response.getEntity();
+		String responseString = null;
+		try
+		{
+			responseString = EntityUtils.toString(entity, "UTF-8");
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		System.out.println(responseString);
 
-        JSONParser jsonParser = new JSONParser();
-        JSONObject jsonObject =  new JSONObject();
-        try {
-            jsonObject = (JSONObject)jsonParser.parse(responseString);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        System.out.println(" response string\n");
-        System.out.println(responseString);
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject = new JSONObject();
+		try
+		{
+			jsonObject = (JSONObject) jsonParser.parse(responseString);
+		}
+		catch (ParseException e)
+		{
+			e.printStackTrace();
+		}
+		System.out.println(" response string\n");
+		System.out.println(responseString);
 
+		ResponseMessage responseMessage = new ResponseMessage();
+		responseMessage.setCode((String) jsonObject.get(RESPONSE_CODE));
+		responseMessage.setMessage((String) jsonObject.get(RESPONSE_MESSAGE));
+		responseMessage.setContent((String) jsonObject.get(RESPONSE_CONTENT));
 
-        ResponseMessage responseMessage = new ResponseMessage();
-        responseMessage.setCode((String)jsonObject.get(RESPONSE_CODE));
-        responseMessage.setMessage((String) jsonObject.get(RESPONSE_MESSAGE));
-        responseMessage.setContent((String)jsonObject.get(RESPONSE_CONTENT));
-
-        return responseMessage;
-    }
+		return responseMessage;
+	}
 
 }

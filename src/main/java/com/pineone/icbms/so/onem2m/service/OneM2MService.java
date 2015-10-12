@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 /**
  * Created by use on 2015-10-01.
  */
-@Service
-public class OneM2MService
+
+public interface OneM2MService
 {
 
 	/**
@@ -21,20 +21,7 @@ public class OneM2MService
 	 * @param physicaloperator
 	 * @return SI연동 data로 변경.
 	 */
-	public DeviceControlMessage oneM2MCreateMessage(String physicaloperator)
-	{
 
-		DeviceControlMessage deviceControlMessage = new DeviceControlMessage();
-
-		deviceControlMessage.set_uri("casebase/SAE_0021");
-		deviceControlMessage.set_notificationUri(
-				"http://www.icbms.org:8080/so/resources/pdcm/cmd_0303");
-		deviceControlMessage.set_command("switch_ctl");
-		deviceControlMessage.setCnf("text/plain:0");
-		deviceControlMessage.setCon(physicaloperator);
-
-		return deviceControlMessage;
-
-	}
+    DeviceControlMessage oneM2MCreateMessage(String physicaloperator);
 
 }

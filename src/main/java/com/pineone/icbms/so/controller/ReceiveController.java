@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by use on 2015-10-05.
  */
 @Controller
-public class ReceiveControl
+public class ReceiveController
 {
 
 	@RequestMapping(value = "/so/resources/pdcm/{id}", method = RequestMethod.POST)
